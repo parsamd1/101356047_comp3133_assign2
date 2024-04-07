@@ -30,6 +30,7 @@ import { HttpService } from '../http.service';
 export class EmployeesComponent {
   // public showTable:boolean=true
   public employeesList:any[]=[]
+  public access=localStorage.getItem('token')
 
   constructor(private http:HttpService) {
     try{this.getAllEmployees();}
@@ -45,4 +46,11 @@ export class EmployeesComponent {
       
     })
   }
+
+  logout(){
+    localStorage.removeItem("token");
+    window.location.href="/"
+  }
+
+  
 }

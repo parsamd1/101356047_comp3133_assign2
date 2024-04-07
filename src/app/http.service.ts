@@ -67,7 +67,7 @@ export class HttpService {
       }
     }`
     const url="http://localhost:4000/graphql"
-    return this.httpClient.post(url, {query:mutation}, {headers:{"Content-Type":"application/json"}})
+    return this.httpClient.post(url, JSON.stringify({query:mutation}), {headers:{"Content-Type":"application/json"}})
   }
 
   public deleteEmployeeById(id:string){
@@ -83,5 +83,29 @@ export class HttpService {
     }`
     const url="http://localhost:4000/graphql"
     return this.httpClient.post(url, {query:mutation},  {headers:{"Content-Type":"application/json"}})
+  }
+
+  public login(username:string, password:string){
+    const query=`query{
+      login(username:"${username}", password:"${password}"){
+        username
+        email
+        password
+      }
+    }`
+    const url="http://localhost:4000/graphql"
+    return this.httpClient.post(url, JSON.stringify({"query":query}), {headers:{"Content-Type":"application/json"}})
+  }
+
+  public signup(username:string, password:string, email:string){
+    const mutation=`mutation{
+      signup(email:"${email}", username:"${username}", password:"${password}"){
+        username
+        email
+        password
+      }
+    }`
+    const url="http://localhost:4000/graphql"
+    return this.httpClient.post(url, JSON.stringify({query:mutation}), {headers:{"Content-Type":"application/json"}})
   }
 }

@@ -20,6 +20,7 @@
 /* Styles for form inputs */
 .form input[type="text"],
 .form input[type="password"],
+.form input[type="email"],
 .form button {
     width: 90%;
     margin-bottom: 15px;
