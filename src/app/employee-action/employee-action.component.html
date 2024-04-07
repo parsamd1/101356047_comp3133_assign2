@@ -1,0 +1,101 @@
+<p>employee-action works!</p>
+
+@if (action=="add" || action=="update") {
+<div class="container">
+    <h1>{{action|uppercase}} Employee</h1>
+    <div class='form'>
+        <input
+            type='text'
+            placeholder='First name...'
+            [(ngModel)]="first_name"
+        />
+        <!-- <p>{{first_name}}</p> -->
+        <input
+            type='text'
+            placeholder='Last name...'
+            [(ngModel)]="last_name"
+        />
+        <!-- <p>{{last_name}}</p> -->
+
+        <input
+            type="email"
+            placeholder="Email..."
+            [(ngModel)]="email"
+        />
+        <!-- <p>{{email}}</p> -->
+
+        <input 
+            type="text"
+            placeholder="Gender..."
+            [(ngModel)]="gender"
+        />
+        <!-- <p>{{gender}}</p> -->
+
+        <input 
+            type="number"
+            placeholder="Salary..."
+            [(ngModel)]="salary"
+        />
+        <!-- <p>{{salary}}</p> -->
+
+        <button (click)="addEmployee()">{{action|uppercase}} Employee</button>
+        <h3 id="status" style="color: red;"></h3>
+
+    </div>
+    <div class="switch-link">
+        <button>Go to Signup page</button>
+    </div>
+</div>
+} @else if (action=="delete" || action=="view") {
+    <div class="container">
+        <h1>{{action|uppercase}} Employee</h1>
+        <div class='form'>
+            <h3 style="color: red;text-align: center;">Fields are readonly</h3>
+            <input
+                type='text'
+                placeholder='First name...'
+                [(ngModel)]="first_name"
+                readonly
+            />
+            <!-- <p>{{first_name}}</p> -->
+            <input
+                type='text'
+                placeholder='Last name...'
+                [(ngModel)]="last_name"
+                readonly
+            />
+            <!-- <p>{{last_name}}</p> -->
+    
+            <input
+                type="email"
+                placeholder="Email..."
+                [(ngModel)]="email"
+                readonly
+            />
+            <!-- <p>{{email}}</p> -->
+    
+            <input 
+                type="text"
+                placeholder="Gender..."
+                [(ngModel)]="gender"
+                readonly
+            />
+            <!-- <p>{{gender}}</p> -->
+    
+            <input 
+                type="number"
+                placeholder="Salary..."
+                [(ngModel)]="salary"
+                readonly
+            />
+            <!-- <p>{{salary}}</p> -->
+    
+            <button (click)="addEmployee()">{{action|uppercase}} Employee</button>
+            <h3 id="status" style="color: red;"></h3>
+    
+        </div>
+        <div class="switch-link">
+            <button>Go to Signup page</button>
+        </div>
+    </div>
+}

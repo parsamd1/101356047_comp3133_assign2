@@ -1,0 +1,43 @@
+<p>employees works!</p>
+<div>
+    <h1>Employee List</h1>
+
+    <button style="margin-bottom: 10px;">Add Employee</button>
+
+    <table class="styled-table">
+    <thead>
+    <tr>
+        <th>Employee First Name</th>
+        <th>Employee Last Name</th>
+        <th>Employee Email Id</th>
+        <th>Employee gender</th>
+        <th>Employee Salary</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+        <tbody>
+            
+            @for (emp of employeesList; track $index) {
+                        <tr>
+                        <td>{{emp.first_name}}</td>
+                        <td>{{emp.last_name}}</td>
+                        <td>{{emp.email}}</td>
+                        <td>{{emp.gender}}</td>
+                        <td>{{emp.salary}}</td>
+                        <td>
+                            <button class='update-button'>Update</button>
+
+                            <button class='delete-button'>Delete</button>
+
+                            <button class='view-button'>View</button>
+                        </td>
+                        </tr>
+                
+                }
+            
+
+        </tbody>
+
+    </table>
+    <button>Logout</button>
+</div>

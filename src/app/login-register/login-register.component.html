@@ -1,0 +1,49 @@
+<p>login-register works!</p>
+
+@if (showLogin) {
+    <div class="container">
+        <h1>Login</h1>
+        <form class='form'>
+            <input
+                type='text'
+                placeholder='Username...'
+            />
+            <input
+                type='password'
+                placeholder='Password...'
+            />
+            <button>Login</button>
+
+        </form>
+        <div class="switch-link">
+            <button (click)="setShowLogin()">Go to Signup page</button>
+        </div>
+    </div>
+}
+@else {
+    <div class="container">
+        <h1>Signup</h1>
+        <div class="form">
+            <input
+                type='text'
+                placeholder='First Name...'
+            />
+            <input
+                type='text'
+                placeholder='Last Name...'
+            />
+            <input
+                type='text'
+                placeholder='Username...'
+            />
+            <input
+                type='password'
+                placeholder='Password...'
+            />
+            <button>Signup</button>
+        </div>
+        <div class="switch-link">
+            <button (click)="setShowLogin()">Go to login page</button>
+        </div>
+    </div>
+}
