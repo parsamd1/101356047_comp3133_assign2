@@ -38,7 +38,12 @@
         />
         <!-- <p>{{salary}}</p> -->
 
-        <button (click)="addEmployee()">{{action|uppercase}} Employee</button>
+        @if (action=="add") {
+            <button (click)="addEmployee()">{{action|uppercase}} Employee</button>
+        } 
+        @else {
+            <button (click)="updateEmployee()">{{action|uppercase}} Employee</button>
+        }
         <h3 id="status" style="color: red;"></h3>
 
     </div>
@@ -89,8 +94,13 @@
                 readonly
             />
             <!-- <p>{{salary}}</p> -->
-    
-            <button (click)="addEmployee()">{{action|uppercase}} Employee</button>
+            @if (action=='view') {
+                <button (click)="viewEmployeeDone()">{{action|uppercase}} Employee</button>
+            } 
+            @else {
+                <button (click)="deleteEmployeeById()">{{action|uppercase}} Employee</button>
+            }
+            
             <h3 id="status" style="color: red;"></h3>
     
         </div>

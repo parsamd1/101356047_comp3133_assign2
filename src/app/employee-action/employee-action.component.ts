@@ -13,7 +13,7 @@ import { UpperCasePipe } from '@angular/common';
 
 
 export class EmployeeActionComponent {
-  @Input() empId:string='66102b3cc8b6f4cf3bd8de19';
+  @Input() empId:string='6612c198bf497feee93d5b92';
   @Input() action:string='update';
   public employee:any=null;
 
@@ -51,6 +51,7 @@ export class EmployeeActionComponent {
         if(data.data.addEmployee1){
           alert('Employee added successfully');
           console.log(data.data.addEmployee1)
+          window.location.href="/employeelist"
         }
         else{
           throw new Error('INTERNAL ERROR')
@@ -61,6 +62,44 @@ export class EmployeeActionComponent {
       alert('Employee was not added -> '+e)
       console.log(e)
     }
+  }
+
+  public updateEmployee(){
+    try{
+      this.httpClient.updateEmployeeById(this.empId,this.first_name,this.last_name,this.email,this.gender,this.salary).subscribe((data:any)=>{
+        if (!data.data.updateEmployeeById){
+          throw new Error("INTERNAL SERVER ERROR")
+        }
+        console.log("Employee updated successfully")
+        alert("Employee updated successfully")
+        window.location.href="/employeelist"
+      })
+    }
+    catch(e){
+      alert(e)
+      console.log(e)
+    }
+  }
+
+  public deleteEmployeeById(){
+    try{
+      this.httpClient.deleteEmployeeById(this.empId).subscribe((data:any)=>{
+        if (data.data.deleteEmployeeById){
+          alert("Delete Successful");
+          window.location.href="/employeelist"
+        }else {
+          throw new Error("Couldn't perform the operation");
+        }
+      })
+    }
+    catch(e){
+      alert(e)
+      console.log(e)
+    }
+  }
+
+  public viewEmployeeDone(){
+    window.location.href = "/employeelist";
   }
 
 }

@@ -54,4 +54,34 @@ export class HttpService {
     const url="http://localhost:4000/graphql"
     return this.httpClient.post(url, JSON.stringify( {"query":mutation} ), {headers:{'Content-Type':"application/json"}});
   }
+
+  public updateEmployeeById(id:string, first_name:string, last_name:string, email:string, gender:string, salary:number){
+    const mutation=`mutation{
+      updateEmployeeById(id:"${id}", first_name:"${first_name}", last_name:"${last_name}", email:"${email}", gender:"${gender}", salary:${salary}){
+        _id
+        first_name
+        last_name
+        email
+        gender
+        salary
+      }
+    }`
+    const url="http://localhost:4000/graphql"
+    return this.httpClient.post(url, {query:mutation}, {headers:{"Content-Type":"application/json"}})
+  }
+
+  public deleteEmployeeById(id:string){
+    const mutation=`mutation {
+      deleteEmployeeById(id:"${id}"){
+        _id
+        first_name
+        last_name
+        email
+        gender
+        salary
+      }
+    }`
+    const url="http://localhost:4000/graphql"
+    return this.httpClient.post(url, {query:mutation},  {headers:{"Content-Type":"application/json"}})
+  }
 }
