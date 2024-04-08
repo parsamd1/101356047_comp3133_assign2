@@ -21,7 +21,7 @@ export class HttpService {
         }
     }`
 
-    const url="http://localhost:4000/graphql"
+    const url="https://one01356047-comp3133-assignment1.onrender.com/graphql"
 
     return this.httpClient.post(url, JSON.stringify({query:query}), {headers:{'Content-Type':'application/json'}})
   }
@@ -36,7 +36,7 @@ export class HttpService {
         salary
     }
   }`
-    const url="http://localhost:4000/graphql"
+    const url="https://one01356047-comp3133-assignment1.onrender.com/graphql"
     return this.httpClient.post(url, JSON.stringify( {"query":query} ), {headers:{'Content-Type':"application/json"}});
   }
 
@@ -51,7 +51,7 @@ export class HttpService {
         salary
       }
     }`
-    const url="http://localhost:4000/graphql"
+    const url="https://one01356047-comp3133-assignment1.onrender.com/graphql"
     return this.httpClient.post(url, JSON.stringify( {"query":mutation} ), {headers:{'Content-Type':"application/json"}});
   }
 
@@ -66,7 +66,7 @@ export class HttpService {
         salary
       }
     }`
-    const url="http://localhost:4000/graphql"
+    const url="https://one01356047-comp3133-assignment1.onrender.com/graphql"
     return this.httpClient.post(url, JSON.stringify({query:mutation}), {headers:{"Content-Type":"application/json"}})
   }
 
@@ -81,7 +81,7 @@ export class HttpService {
         salary
       }
     }`
-    const url="http://localhost:4000/graphql"
+    const url="https://one01356047-comp3133-assignment1.onrender.com/graphql"
     return this.httpClient.post(url, {query:mutation},  {headers:{"Content-Type":"application/json"}})
   }
 
@@ -93,7 +93,7 @@ export class HttpService {
         password
       }
     }`
-    const url="http://localhost:4000/graphql"
+    const url="https://one01356047-comp3133-assignment1.onrender.com/graphql"
     return this.httpClient.post(url, JSON.stringify({"query":query}), {headers:{"Content-Type":"application/json"}})
   }
 
@@ -105,7 +105,7 @@ export class HttpService {
         password
       }
     }`
-    const url="http://localhost:4000/graphql"
+    const url="https://one01356047-comp3133-assignment1.onrender.com/graphql"
     return this.httpClient.post(url, JSON.stringify({query:mutation}), {headers:{"Content-Type":"application/json"}})
   }
 }
