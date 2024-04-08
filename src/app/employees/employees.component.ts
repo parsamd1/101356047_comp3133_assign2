@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpService } from '../http.service';
+import { Router, NavigationExtras } from '@angular/router';
+
 
 @Component({
   selector: 'app-employees',
@@ -32,7 +34,7 @@ export class EmployeesComponent {
   public employeesList:any[]=[]
   public access=localStorage.getItem('token')
 
-  constructor(private http:HttpService) {
+  constructor(private http:HttpService, private router:Router) {
     try{this.getAllEmployees();}
     catch(e){
       console.log(e)
@@ -50,6 +52,10 @@ export class EmployeesComponent {
   logout(){
     localStorage.removeItem("token");
     window.location.href="/"
+  }
+
+  public route(action:string, id:string=''){
+    this.router.navigate(['/employee-action', action, id])
   }
 
   

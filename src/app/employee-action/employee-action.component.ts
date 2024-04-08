@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { HttpService } from '../http.service';
 import { FormsModule } from '@angular/forms';
 import { UpperCasePipe } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-employee-action',
@@ -14,7 +16,7 @@ import { UpperCasePipe } from '@angular/common';
 
 export class EmployeeActionComponent {
   @Input() empId:string='6612c198bf497feee93d5b92';
-  @Input() action:string='update';
+  @Input() action:string='add';
   public employee:any=null;
 
   public first_name:string=''
@@ -22,14 +24,21 @@ export class EmployeeActionComponent {
   email:string=''
   gender:string=''
   salary:number=0
-  constructor(private httpClient:HttpService) {
-    try{
+  constructor(private httpClient:HttpService, private router:ActivatedRoute) {
+    this.router.params.subscribe((data:any)=>{
+      console.log(data)
+      this.empId=data.id
+      this.action=data.action
+    })
+    if(this.action!="add"){
+      try{
       this.getTheEmployee(this.empId);
     }
     catch(e){
       console.log(e)
       alert(e)
     }
+  }
   }
   getTheEmployee(id:string):any{
     this.httpClient.getEmployeeById(id).subscribe((data:any) =>{

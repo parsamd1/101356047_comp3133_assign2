@@ -1,9 +1,8 @@
-<p>employees works!</p>
 @if (access) {
 <div>
     <h1>Employee List</h1>
 
-    <button style="margin-bottom: 10px;">Add Employee</button>
+    <button style="margin-bottom: 10px;" (click)="route('add')">Add Employee</button>
 
     <table class="styled-table">
     <thead>
@@ -26,11 +25,11 @@
                         <td>{{emp.gender}}</td>
                         <td>{{emp.salary}}</td>
                         <td>
-                            <button class='update-button'>Update</button>
+                            <button class='update-button' (click)="route('update', emp._id)">Update</button>
 
-                            <button class='delete-button'>Delete</button>
+                            <button class='delete-button' (click)="route('delete', emp._id)">Delete</button>
 
-                            <button class='view-button'>View</button>
+                            <button class='view-button' (click)="route('view', emp._id)">View</button>
                         </td>
                         </tr>
                 

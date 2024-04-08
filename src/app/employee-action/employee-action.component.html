@@ -1,21 +1,23 @@
-<p>employee-action works!</p>
 
 @if (action=="add" || action=="update") {
 <div class="container">
     <h1>{{action|uppercase}} Employee</h1>
     <div class='form'>
+        <label>First Name:</label>
         <input
             type='text'
             placeholder='First name...'
             [(ngModel)]="first_name"
         />
         <!-- <p>{{first_name}}</p> -->
+        <label>Last Name:</label>
         <input
             type='text'
             placeholder='Last name...'
             [(ngModel)]="last_name"
         />
         <!-- <p>{{last_name}}</p> -->
+        <label>Email:</label>
 
         <input
             type="email"
@@ -23,6 +25,7 @@
             [(ngModel)]="email"
         />
         <!-- <p>{{email}}</p> -->
+        <label>Gender:</label>
 
         <input 
             type="text"
@@ -30,6 +33,7 @@
             [(ngModel)]="gender"
         />
         <!-- <p>{{gender}}</p> -->
+        <label>Salary:</label>
 
         <input 
             type="number"
@@ -56,6 +60,7 @@
         <h1>{{action|uppercase}} Employee</h1>
         <div class='form'>
             <h3 style="color: red;text-align: center;">Fields are readonly</h3>
+            <label>First Name:</label>
             <input
                 type='text'
                 placeholder='First name...'
@@ -63,6 +68,7 @@
                 readonly
             />
             <!-- <p>{{first_name}}</p> -->
+            <label>Last Name:</label>
             <input
                 type='text'
                 placeholder='Last name...'
@@ -70,7 +76,8 @@
                 readonly
             />
             <!-- <p>{{last_name}}</p> -->
-    
+            <label>Email:</label>
+
             <input
                 type="email"
                 placeholder="Email..."
@@ -78,7 +85,8 @@
                 readonly
             />
             <!-- <p>{{email}}</p> -->
-    
+            <label>Gender:</label>
+
             <input 
                 type="text"
                 placeholder="Gender..."
@@ -87,6 +95,8 @@
             />
             <!-- <p>{{gender}}</p> -->
     
+            <label>Salary:</label>
+
             <input 
                 type="number"
                 placeholder="Salary..."

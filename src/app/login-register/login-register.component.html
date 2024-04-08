@@ -1,15 +1,18 @@
-<p>login-register works!</p>
 
 @if (showLogin) {
     <div class="container">
         <h1>Login</h1>
         <div class='form'>
             <h3 style="color: red; text-align: center;">{{statusText}}</h3>
+            <label>Username:</label>
+
             <input
                 type='text'
                 placeholder='Username...'
                 [(ngModel)]="username"
             />
+            <label>Password:</label>
+
             <input
                 type='password'
                 placeholder='Password...'

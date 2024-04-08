@@ -6,5 +6,5 @@ import { EmployeeActionComponent } from './employee-action/employee-action.compo
 export const routes: Routes = [
     {path: '', component:LoginRegisterComponent},
     {path:'employeelist', component:EmployeesComponent},
-    {path:'employee-action', component:EmployeeActionComponent}
+    {path:'employee-action/:action/:id', component:EmployeeActionComponent}
 ];
