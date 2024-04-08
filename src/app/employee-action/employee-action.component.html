@@ -52,7 +52,7 @@
 
     </div>
     <div class="switch-link">
-        <button>Go to Signup page</button>
+        <button (click)="routeToEmployeeList()">Go back to Employeelist page</button>
     </div>
 </div>
 } @else if (action=="delete" || action=="view") {
@@ -115,7 +115,7 @@
     
         </div>
         <div class="switch-link">
-            <button>Go to Signup page</button>
+            <button (click)="routeToEmployeeList()">Go back to Employeelist page</button>
         </div>
     </div>
 }

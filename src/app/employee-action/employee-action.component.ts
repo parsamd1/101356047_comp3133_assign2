@@ -111,4 +111,8 @@ export class EmployeeActionComponent {
     window.location.href = "/employeelist";
   }
 
+  public routeToEmployeeList(){
+    window.location.href= '/employeelist';
+  }
+
 }
